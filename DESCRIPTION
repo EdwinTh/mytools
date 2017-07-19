@@ -1,4 +1,4 @@
-Package: my_tools
+Package: mytools
 Type: Package
 Title: General Purpose functions for Analysis
 Version: 0.1.0
