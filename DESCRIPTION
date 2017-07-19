@@ -1,0 +1,13 @@
+Package: my_tools
+Type: Package
+Title: General Purpose functions for Analysis
+Version: 0.1.0
+Author: Edwin Thoen
+Maintainer: Edwin Thoen <edwinthoen@gmail.com>
+Description: Tools I want to have at my disposal at all times.
+Encoding: UTF-8
+LazyData: true
+Depends:
+    ggplot2,
+    dplyr
+RoxygenNote: 5.0.1
