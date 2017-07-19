@@ -37,10 +37,11 @@ unique_id <- function(x, ...) {
 #' @param x a data frame
 #' @param group_var the variable to group by
 #' @param prop_var the variable over which to calculate the frequencies
-#' 
 #' @return 
 #' A data frame with both the absolute and the relative distribution of `prop_var`
 #' within `group_var`.
+#' @seealso
+#' Inspired by SO question 24576515
 #' @examples
 #' mtcars %>% freq_table(vs, cyl)
 #' @export
