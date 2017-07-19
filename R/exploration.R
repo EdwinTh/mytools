@@ -50,7 +50,8 @@ freq_table <- function(x,
                        prop_var) {
   group_var <- enquo(group_var)
   prop_var  <- enquo(prop_var)
-  x %>% group_by(!!group_var, !!prop_var) %>% 
+  x %>% 
+    group_by(!!group_var, !!prop_var) %>% 
     summarise(n = n()) %>% 
     mutate(freq = n /sum(n)) %>% 
     ungroup
