@@ -11,6 +11,7 @@
 #' mtcars %>% unique_id(cyl, disp)
 #' mtcars %>% unique_id(cyl, wt)
 #' mtcars %>% unique_id(cyl, qsec)
+#' @export
 unique_id <- function(x, ...) {
   vars <- as.character(match.call())[-(1:2)]
   vars_enq <- enquo(vars)

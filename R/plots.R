@@ -10,6 +10,7 @@
 #' x <- c(rnorm(100,1), rnorm(100, 2))
 #' g <- rep(letters[1:2], each = 100)
 #' dd(x, g)
+#' @export
 dd <- function(x, g) {
   stopifnot(class(x) == "numeric")
   stopifnot(length(unique(g)) == 2)
