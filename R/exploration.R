@@ -30,14 +30,14 @@ unique_id <- function(x, ...) {
 }
 
 #' Frequencies Grouped by Another Column
-#' 
+#'
 #' Obtain the relative distribution of a categorical variable within the group
 #' member of a different variable.
-#' 
+#'
 #' @param x a data frame
 #' @param group_var the variable to group by
 #' @param prop_var the variable over which to calculate the frequencies
-#' @return 
+#' @return
 #' A data frame with both the absolute and the relative distribution of `prop_var`
 #' within `group_var`.
 #' @seealso
@@ -45,14 +45,15 @@ unique_id <- function(x, ...) {
 #' @examples
 #' mtcars %>% freq_table(vs, cyl)
 #' @export
-freq_table <- function(x, 
-                       group_var, 
-                       prop_var) {
+freq_table <- function(x,
+                       group_var,
+                       prop_var,
+                       round_prop = 3) {
   group_var <- enquo(group_var)
   prop_var  <- enquo(prop_var)
-  x %>% 
-    group_by(!!group_var, !!prop_var) %>% 
-    summarise(n = n()) %>% 
-    mutate(freq = n /sum(n)) %>% 
-    ungroup
+  x %>%
+    group_by(!!group_var, !!prop_var) %>%
+    summarise(n = n()) %>%
+    mutate(freq = round(n /sum(n), round_prop)) %>%
+    ungroup()
 }
